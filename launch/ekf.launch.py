@@ -28,8 +28,21 @@ def generate_launch_description():
         launch_ros.actions.Node(
             package='robot_localization',
             executable='ekf_node',
-            name='ekf_filter_node',
+            name='ekf_node_tier1',
             output='screen',
-            parameters=[os.path.join(get_package_share_directory("robot_localization"), 'params', 'ekf.yaml')],
+            parameters=[os.path.join(get_package_share_directory("robot_localization"), 'params', 'test.yaml')],
+            remappings=[
+                ('/odometry/filtered', 'odom'),
+            ],
            ),
+        launch_ros.actions.Node(
+            package='robot_localization',
+            executable='ekf_node',
+            name='ekf_node_tier2',
+            output='screen',
+            parameters=[os.path.join(get_package_share_directory("robot_localization"), 'params', 'test.yaml')],
+            remappings=[
+                ('/odometry/filtered', 'odometry/filtered_tier2'),
+            ],
+           )
 ])
