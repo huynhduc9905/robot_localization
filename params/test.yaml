@@ -51,7 +51,7 @@
 
 ekf_node_tier1:
     ros__parameters:
-        frequency: 50.0              # How frequently we publish (even if filter has not updated)
+        frequency: 20.0              # How frequently we publish (even if filter has not updated)
         sensor_timeout: 0.04         # If no sensor data in this time, we do a prediction (without correction)
         two_d_mode: true             # If enabled, 3D dimensions (z, roll, pitch, and their derivatives) are forced to 0
         transform_timeout: 0.0       # How long to wait for required transforms to be available
@@ -87,13 +87,13 @@ ekf_node_tier1:
                         false, false, true,    # roll velocity, pitch velocity, yaw velocity
                         false, false, false]   # x acceleration, y acceleration, z acceleration
 
-        odom1: odom_morb
-        odom1_differential: false
-        odom1_config: [false, false, false,
-                        false, false, false,
-                        true,  true, false,   # vx only
-                        false, false, true,    # wz
-                        false, false, false]
+        # odom1: odom_morb
+        # odom1_differential: false
+        # odom1_config: [false, false, false,
+        #                 false, false, false,
+        #                 true,  true, false,   # vx only
+        #                 false, false, true,    # wz
+        #                 false, false, false]
 
         imu0: imu
         imu0_config: [false, false, false,
@@ -105,7 +105,7 @@ ekf_node_tier1:
 
 ekf_node_tier2:
     ros__parameters:
-        frequency: 50.0
+        frequency: 20.0
         sensor_timeout: 0.04
         two_d_mode: true
         transform_timeout: 0.0
@@ -114,7 +114,7 @@ ekf_node_tier2:
         smooth_lagged_data: true
         history_length: 1.0
         predict_to_current_time: true
-        initial_state: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        # initial_state: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
         
         # You can tweak these further to "trust but not completely" the global pose
         # initial_estimate_covariance: [1e-9, 1e-9, 1e-9,
@@ -142,13 +142,13 @@ ekf_node_tier2:
                         false, false, true,    # roll velocity, pitch velocity, yaw velocity
                         false, false, false]   # x acceleration, y acceleration, z acceleration
 
-        odom1: odom_morb
-        odom1_differential: false
-        odom1_config: [false, false, false,
-                    false, false, false,
-                    true,  true, false,   # vx only
-                    false, false, true,    # wz
-                    false, false, false]
+        # odom1: odom_morb
+        # odom1_differential: false
+        # odom1_config: [false, false, false,
+        #             false, false, false,
+        #             true,  true, false,   # vx only
+        #             false, false, true,    # wz
+        #             false, false, false]
 
         imu0: imu
         imu0_config: [false, false, false,
