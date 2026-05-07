@@ -100,7 +100,7 @@ ekf_node_tier1:
                         false, false, false,
                         false, false, false,
                         false, false, true,
-                        true, false, false]
+                        false, false, false]
         imu0_remove_gravitational_acceleration: true
 
 ekf_node_tier2:
@@ -155,7 +155,7 @@ ekf_node_tier2:
                         false, false, false,
                         false, false, false,
                         false, false, true,
-                        true, false, false]
+                        false, false, false]
         imu0_remove_gravitational_acceleration: true
 
         # Global pose source(s)
