@@ -76,7 +76,7 @@ ekf_node_tier1:
 
         map_frame: map                    # The name of your REP-105 map frame (not needed if world_frame == odom_frame)
         odom_frame: odom             # The name of your REP-105 odom frame
-        base_link_frame: base_link   # The name of your REP-105 base_link frame. Will be the child_frame_id in the output.
+        base_link_frame: base_footprint   # The name of your REP-105 base_link frame. Will be the child_frame_id in the output.
         world_frame: odom            # The world frame that will be the frame_id in the output.
 
         # Continuous input sources
@@ -131,7 +131,7 @@ ekf_node_tier2:
 
         map_frame: map
         odom_frame: odom
-        base_link_frame: base_link
+        base_link_frame: base_footprint
         world_frame: map                 # <-- second tier is in the map frame
 
         # Continuous input sources (same as tier1)
